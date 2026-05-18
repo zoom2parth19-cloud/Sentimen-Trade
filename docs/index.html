@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentimenTrade - AI-Driven Event Study Engine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        code {
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+        
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: #f8f8f2;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid #667eea;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .cta-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        table th {
+            background: #f8f9fa;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        footer {
+            background: rgba(0,0,0,0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📈 SentimenTrade</h1>
+        <p>AI-Driven Event Study & Cross-Asset Correlation Engine</p>
+    </header>
+
+    <div class="container">
+        <!-- Overview Section -->
+        <section>
+            <h2>🎯 Overview</h2>
+            <p><strong>SentimenTrade</strong> is a quantitative research platform that combines financial NLP with classical event-study methodology. It uses <strong>FinBERT</strong> — a BERT model fine-tuned on financial text — to score news headlines, then measures whether sentiment shocks produce statistically significant abnormal returns in equity prices.</p>
+            
+            <p style="margin-top: 15px;">The engine answers critical questions like:</p>
+            <ul>
+                <li>Did negative earnings headlines cause a measurable price dislocation?</li>
+                <li>How correlated is a stock's sentiment score with its benchmark-adjusted returns?</li>
+                <li>What is the average cumulative abnormal return (CAR) over a [-5, +5] day event window?</li>
+            </ul>
+        </section>
+
+        <!-- Key Features -->
+        <section>
+            <h2>✨ Key Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h4>🧠 Advanced NLP</h4>
+                    <p>FinBERT sentiment analysis on financial news headlines with probability-based scoring</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 Event Study Analysis</h4>
+                    <p>Calculate Cumulative Abnormal Returns (CAR) and Market Model abnormal returns</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔗 Cross-Asset Correlation</h4>
+                    <p>Analyze correlation matrices between multiple assets and sentiment drivers</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📈 Interactive Dashboard</h4>
+                    <p>Real-time visualizations with Streamlit for seamless data exploration</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📉 Statistical Rigor</h4>
+                    <p>Built on quantitative finance best practices and log returns methodology</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⚡ Fast Processing</h4>
+                    <p>Efficient market data pipeline using yfinance with GPU acceleration support</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section>
+            <h2>🛠️ Technology Stack</h2>
+            <p>Built with modern, production-ready technologies:</p>
+            <div class="tech-stack">
+                <span class="badge">Python 3.10+</span>
+                <span class="badge">PyTorch</span>
+                <span class="badge">Hugging Face</span>
+                <span class="badge">Streamlit</span>
+                <span class="badge">yfinance</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">NumPy</span>
+                <span class="badge">SciPy</span>
+                <span class="badge">Plotly</span>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Package</th>
+                        <th>Purpose</th>
+                        <th>Version</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>transformers</code></td>
+                        <td>Hugging Face FinBERT model</td>
+                        <td>≥4.41.0</td>
+                    </tr>
+                    <tr>
+                        <td><code>yfinance</code></td>
+                        <td>Market data download</td>
+                        <td>≥0.2.40</td>
+                    </tr>
+                    <tr>
+                        <td><code>pandas</code></td>
+                        <td>Data manipulation</td>
+                        <td>≥2.2.0</td>
+                    </tr>
+                    <tr>
+                        <td><code>streamlit</code></td>
+                        <td>Interactive dashboard</td>
+                        <td>≥1.35.0</td>
+                    </tr>
+                    <tr>
+                        <td><code>torch</code></td>
+                        <td>PyTorch backend</td>
+                        <td>≥2.3.0</td>
+                    </tr>
+                    <tr>
+                        <td><code>scipy</code></td>
+                        <td>Statistical testing</td>
+                        <td>≥1.13.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Project Structure -->
+        <section>
+            <h2>📁 Project Structure</h2>
+            <pre><code>SentimenTrade/
+├── src/
+│   ├── __init__.py
+│   ├── data_loader.py          # Market data pipeline
+│   ├── sentiment_analyzer.py   # FinBERT NLP engine
+│   ├── event_study.py          # Abnormal return & CAR computation
+│   └── correlation_engine.py   # Cross-asset correlation matrix
+│
+├── dashboard/
+│   └── app.py                  # Streamlit interactive dashboard
+│
+├── data/
+│   ├── raw/                    # Raw OHLCV price downloads
+│   └── processed/              # Cleaned returns & sentiment scores
+│
+├── tests/
+│   ├── test_data_loader.py
+│   └── test_sentiment_analyzer.py
+│
+├── requirements.txt
+├── .gitignore
+└── README.md</code></pre>
+        </section>
+
+        <!-- Quick Start -->
+        <section>
+            <h2>🚀 Quick Start</h2>
+            <h3>Installation</h3>
+            <pre><code># Clone the repository
+git clone https://github.com/zoom2parth19-cloud/Sentimen-Trade.git
+cd Sentimen-Trade
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt</code></pre>
+
+            <h3>Run the Dashboard</h3>
+            <pre><code>streamlit run dashboard/app.py</code></pre>
+            
+            <p>The dashboard will open at <code>http://localhost:8501</code></p>
+        </section>
+
+        <!-- Methodology -->
+        <section>
+            <h2>📚 Methodology</h2>
+            
+            <h3>1. Data Pipeline</h3>
+            <p>Historical OHLCV data is downloaded via <code>yfinance</code>. Daily <strong>log returns</strong> are computed as:</p>
+            <pre><code>r_t = ln(P_t / P_{t-1})</code></pre>
+            <p>Log returns are preferred in quantitative finance because they are time-additive, approximately normally distributed, and numerically stable for modeling.</p>
+
+            <h3>2. Sentiment Engine (FinBERT)</h3>
+            <p>Each headline is passed through <strong>ProsusAI/finbert</strong>, a BERT-based model fine-tuned on ~10,000 financial news sentences. A scalar sentiment score is derived as:</p>
+            <pre><code>score = P(positive) - P(negative)  ∈ [-1, +1]</code></pre>
+
+            <h3>3. Event Study Analysis</h3>
+            <p>Using the Market Model, expected returns are estimated from a pre-event estimation window. Abnormal returns (AR) and Cumulative Abnormal Returns (CAR) are computed across the event window.</p>
+        </section>
+
+        <!-- License -->
+        <section>
+            <h2>📜 License</h2>
+            <p>This project is licensed under the <strong>MIT License</strong> — free to use, modify, and distribute with attribution.</p>
+        </section>
+
+        <!-- CTA -->
+        <section style="text-align: center;">
+            <h2>Get Started Today</h2>
+            <p>Join the quantitative research community and start analyzing market sentiment!</p>
+            <a href="https://github.com/zoom2parth19-cloud/Sentimen-Trade" class="cta-button">📘 View on GitHub</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SentimenTrade. Built with ❤️ for quantitative researchers.</p>
+        <p>GitHub: <a href="https://github.com/zoom2parth19-cloud/Sentimen-Trade" style="color: #667eea;">zoom2parth19-cloud/Sentimen-Trade</a></p>
+    </footer>
+</body>
+</html>
