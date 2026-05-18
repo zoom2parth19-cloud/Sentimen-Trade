@@ -1,0 +1,21 @@
+# ── Core Data & Numerics ──────────────────────────────────────────────────────
+numpy>=1.26.0
+pandas>=2.2.0
+scipy>=1.13.0
+
+# ── Market Data ───────────────────────────────────────────────────────────────
+yfinance>=0.2.40
+
+# ── NLP / Machine Learning ────────────────────────────────────────────────────
+transformers>=4.41.0
+torch>=2.3.0                # CPU-only build is fine for inference
+# torch>=2.3.0+cu121        # Uncomment for CUDA 12.1 GPU acceleration
+
+# ── Dashboard ─────────────────────────────────────────────────────────────────
+streamlit>=1.35.0
+plotly>=5.22.0
+
+# ── Development & Testing ─────────────────────────────────────────────────────
+pytest>=8.2.0
+black>=24.4.0               # Code formatter (PEP 8)
+ruff>=0.4.0                 # Fast linter
